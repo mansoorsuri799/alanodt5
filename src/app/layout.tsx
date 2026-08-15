@@ -2,6 +2,19 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import DeferredStyles from "@/components/DeferredStyles";
+import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
+import WebVitalsTracker from "@/components/WebVitalsTracker";
+import { MobileMenuProvider } from "@/components/MobileMenuProvider";
+import {
+  LOGO_PATH,
+  RATING_COUNT,
+  RATING_VALUE,
+  SITE_NAME,
+  SITE_ORIGIN,
+} from "@/lib/site";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,131 +23,87 @@ const poppins = Poppins({
   variable: "--font-poppins",
   preload: true,
 });
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import DeferredStyles from "@/components/DeferredStyles";
-import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
-import WebVitalsTracker from "@/components/WebVitalsTracker";
-import { MobileMenuProvider } from "@/components/MobileMenuProvider";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#06091F",
+  themeColor: "#140818",
   viewportFit: "cover",
   interactiveWidget: "resizes-visual",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cardrummyapp.com.pk'),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Card Rummy Pakistan v1.231 Free Download Official APK",
-    template: "%s | Card Rummy"
+    default: "Alano DT 5 APK Pakistan | Official Android Download",
+    template: `%s | ${SITE_NAME}`,
   },
-  description: "Card Rummy 2026 - Pakistan's #1 card game platform. Download Card Rummy APK, play Teen Patti, Rummy, Dragon vs Tiger & win real cash. Fast withdrawals via JazzCash & EasyPaisa. Join 500K+ players!",
+  description:
+    "Install Alano DT 5 v6.5 for Android in Pakistan. Slots, Dragon vs Tiger, JazzCash and EasyPaisa. Free APK, 56.82 MB, honest deposit and cash-out notes.",
   keywords: [
-    "Card Rummy",
-    "card rummy game",
-    "card rummy download",
-    "card rummy app",
-    "card rummy apk",
-    "card rummy pakistan",
-    "card rummy online",
-    "download card rummy",
-    "card rummy real money",
-    "3 Patti Card Rummy",
-    "how to play card rummy",
-    "card rummy 2026",
-    "Pakistan card games",
-    "Teen Patti game",
-    "online rummy game",
-    "earn money playing cards",
-    "Android gaming app 2026",
-    "JazzCash gaming",
-    "EasyPaisa gaming",
-    "mobile card games",
-    "real money games Pakistan",
-    "card game earning app",
-    "Teen Patti online",
-    "Dragon vs Tiger",
-    "best earning app Pakistan",
-    "rummy card game",
-    "play rummy online",
-    "rummy game download"
+    "Alano DT 5",
+    "alano dt 5 apk",
+    "alano dt 5 download",
+    "alano dt 5 pakistan",
+    "alanodt5",
   ],
-  authors: [{ name: "Card Rummy Team" }],
-  creator: "Card Rummy",
-  publisher: "Card Rummy",
+  authors: [{ name: `${SITE_NAME} Editorial` }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon', sizes: '256x256' },
-      { url: '/card-rummy.webp', type: 'image/webp', sizes: '512x512' }
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "256x256" },
+      { url: LOGO_PATH, type: "image/webp", sizes: "512x512" },
     ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180' }
-    ],
-    shortcut: [
-      { url: '/favicon.ico', type: 'image/x-icon' }
-    ]
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
   },
-  verification: {
-    google: "8a7c21f6e90a89ef",
-  },
-  alternates: {
-    canonical: "https://cardrummyapp.com.pk",
-  },
+  alternates: { canonical: SITE_ORIGIN },
   openGraph: {
-    title: "Card Rummy Pakistan v1.231 Free Download Official APK",
-    description: "Card Rummy 2026 - Pakistan's #1 card game platform. Join 500K+ players. Play Teen Patti, Rummy & more. Earn real money with JazzCash & EasyPaisa. Download now!",
-    url: "https://cardrummyapp.com.pk",
-    siteName: "Card Rummy",
-    locale: "en_US",
+    title: "Alano DT 5 APK Pakistan | Official Android Download",
+    description:
+      "Alano DT 5 v6.5 APK for Pakistan. JazzCash, EasyPaisa, slots and card tables. 4.5 rating shown on this site.",
+    url: SITE_ORIGIN,
+    siteName: SITE_NAME,
+    locale: "en_PK",
     type: "website",
     images: [
       {
-        url: "https://cardrummyapp.com.pk/feature/og-image.webp",
+        url: `${SITE_ORIGIN}/feature/og-image.webp`,
         width: 512,
         height: 512,
-        alt: "Card Rummy - Premier Card Gaming Platform",
+        alt: "Alano DT 5 Android game icon",
       },
-      {
-        url: "https://cardrummyapp.com.pk/feature/og-image-square.webp",
-        width: 512,
-        height: 512,
-        alt: "Card Rummy - Premier Card Gaming Platform",
-      }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Card Rummy Pakistan v1.231 Free Download Official APK",
-    description: "Card Rummy 2026 - Pakistan's #1 card game platform. Join 500K+ players. Play Teen Patti, Rummy & more. Earn real money with JazzCash & EasyPaisa. Download now!",
-    creator: "@cardrummy",
+    title: "Alano DT 5 APK Pakistan | Official Android Download",
+    description: "Free Alano DT 5 APK v6.5 for Android. Pakistani wallets and in-app bonuses explained.",
     images: [
       {
-        url: "https://cardrummyapp.com.pk/feature/twitter-card.webp",
+        url: `${SITE_ORIGIN}/feature/twitter-card.webp`,
         width: 512,
         height: 512,
-        alt: "Card Rummy - Premier Card Gaming Platform",
-      }
+        alt: "Alano DT 5 Android game icon",
+      },
     ],
   },
-  applicationName: "Card Rummy",
+  applicationName: SITE_NAME,
   category: "Gaming",
-  classification: "Card Gaming Platform",
 };
 
 export default function RootLayout({
@@ -148,29 +117,21 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="256x256" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/card-rummy.webp" type="image/webp" sizes="512x512" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
-        
-        {/* Preconnect to external domains for faster loading */}
+        <link rel="icon" href={LOGO_PATH} type="image/webp" sizes="512x512" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
-        {/* Defer manifest to avoid critical path (374ms latency) - load after page interactive */}
         <Script id="deferred-manifest" strategy="lazyOnload">
           {`(function(){var l=document.createElement('link');l.rel='manifest';l.href='/manifest.json';document.head.appendChild(l);})();`}
         </Script>
-        {/* Google Analytics - only load if GA ID is set in env (use NEXT_PUBLIC_GA_MEASUREMENT_ID) */}
-        {typeof process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID === 'string' &&
-         process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
-         !/^G-XXXXXXXXXX$/i.test(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-              strategy="lazyOnload"
-            />
-            <Script id="google-analytics" strategy="lazyOnload">
-              {`
+        {typeof process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID === "string" &&
+          process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+          !/^G-XXXXXXXXXX$/i.test(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) && (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+                strategy="lazyOnload"
+              />
+              <Script id="google-analytics" strategy="lazyOnload">
+                {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
@@ -180,32 +141,29 @@ export default function RootLayout({
                   transport_type: 'beacon'
                 });
               `}
-            </Script>
-          </>
-        )}
+              </Script>
+            </>
+          )}
       </head>
       <body
         className={`${poppins.className} antialiased bg-primary text-white min-h-screen flex flex-col`}
         style={{
-          backgroundImage: "radial-gradient(circle at 10% 20%, rgba(10, 16, 41, 0.4) 0%, rgba(6, 9, 31, 0.01) 90%)",
+          backgroundImage:
+            "radial-gradient(circle at 10% 20%, rgba(40, 8, 28, 0.55) 0%, rgba(20, 8, 24, 0.02) 90%)",
           backgroundAttachment: "fixed",
-          minHeight: "100vh"
+          minHeight: "100vh",
         }}
         suppressHydrationWarning
       >
         <div className="stars-bg fixed inset-0 z-0 opacity-20"></div>
         <MobileMenuProvider>
           <Header />
-          <main className="relative z-10">
-          {children}
-          </main>
+          <main className="relative z-10">{children}</main>
           <DeferredStyles />
           <Footer />
           <ScrollToTopWrapper />
         </MobileMenuProvider>
         <WebVitalsTracker />
-        
-        {/* Structured data for Organization */}
         <Script
           id="organization-schema"
           type="application/ld+json"
@@ -213,19 +171,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Card Rummy",
-              "url": "https://cardrummyapp.com.pk",
-              "logo": "https://cardrummyapp.com.pk/card-rummy.webp",
-              "description": "Card Rummy is Pakistan's premier card gaming platform, offering Teen Patti, Rummy, and many other card games with real cash rewards.",
-              "sameAs": [
-                "https://facebook.com/cardrummy",
-                "https://twitter.com/cardrummy"
-              ]
-            })
+              name: SITE_NAME,
+              url: SITE_ORIGIN,
+              logo: `${SITE_ORIGIN}${LOGO_PATH}`,
+              description:
+                "Editorial Android APK guide for Alano DT 5 players in Pakistan.",
+              email: "support@alanodt5game.com.pk",
+            }),
           }}
         />
-        
-        {/* Structured data for SoftwareApplication */}
         <Script
           id="app-schema"
           type="application/ld+json"
@@ -233,20 +187,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "Card Rummy",
-              "operatingSystem": "Android",
-              "applicationCategory": "GameApplication",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "PKR"
-              },
-              "aggregateRating": {
+              name: SITE_NAME,
+              operatingSystem: "Android",
+              applicationCategory: "GameApplication",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "PKR" },
+              aggregateRating: {
                 "@type": "AggregateRating",
-                "ratingValue": "4.5",
-                "ratingCount": "500000"
-              }
-            })
+                ratingValue: RATING_VALUE,
+                bestRating: "5",
+                ratingCount: RATING_COUNT,
+              },
+            }),
           }}
         />
       </body>

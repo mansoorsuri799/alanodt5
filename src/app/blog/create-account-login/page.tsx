@@ -1,5 +1,5 @@
 import { permanentRedirect } from 'next/navigation';
 
-export default function CreateAccountLoginRedirect() {
-  permanentRedirect('/blog/create-card-rummy-account-and-login');
+export default function LegacyLoginRedirect() {
+  permanentRedirect('/blog/create-alano-dt-5-account-and-login');
 }

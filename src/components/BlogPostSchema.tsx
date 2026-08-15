@@ -1,9 +1,7 @@
-import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
-
-const BASE = "https://cardrummyapp.com.pk";
+import { SITE_NAME, SITE_ORIGIN } from '@/lib/site';
 
 function safeJsonLd(obj: object): string {
-  return JSON.stringify(obj).replace(/</g, "\\u003c");
+  return JSON.stringify(obj).replace(/</g, '\\u003c');
 }
 
 type BlogPostSchemaProps = {
@@ -14,7 +12,6 @@ type BlogPostSchemaProps = {
   dateModified?: string;
   image?: string;
   breadcrumbOnly?: boolean;
-  /** Key summary or first 2-3 paragraphs for AI parsing and articleBody */
   articleBody?: string;
 };
 
@@ -24,56 +21,49 @@ export default function BlogPostSchema({
   slug,
   datePublished,
   dateModified,
-  image = `${BASE}/card-rummy.webp`,
+  image = `${SITE_ORIGIN}/alano-dt-5.webp`,
   breadcrumbOnly = false,
   articleBody,
 }: BlogPostSchemaProps) {
-  const url = `${BASE}/blog/${slug}`;
+  const url = `${SITE_ORIGIN}/blog/${slug}`;
   const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE}/blog` },
-      { "@type": "ListItem", position: 3, name: title, item: url },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_ORIGIN },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_ORIGIN}/blog` },
+      { '@type': 'ListItem', position: 3, name: title, item: url },
     ],
   };
   const article: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": `${url}#article`,
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
     headline: title,
     description,
     url,
     image,
-    author: { "@type": "Organization", name: "Card Rummy", url: BASE },
+    author: { '@type': 'Organization', name: SITE_NAME, url: SITE_ORIGIN },
     publisher: {
-      "@type": "Organization",
-      name: "Card Rummy",
+      '@type': 'Organization',
+      name: SITE_NAME,
       logo: {
-        "@type": "ImageObject",
-        url: `${BASE}/card-rummy.webp`,
-        ...imageObjectLicensing,
-        creditText: "Card Rummy logo",
+        '@type': 'ImageObject',
+        url: `${SITE_ORIGIN}/alano-dt-5.webp`,
+        creditText: `${SITE_NAME} logo`,
       },
     },
     datePublished,
     dateModified: dateModified || datePublished,
-    mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    inLanguage: "en-US",
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    inLanguage: 'en',
     ...(articleBody && { articleBody }),
   };
   return (
-    <div suppressHydrationWarning style={{ display: "contents" }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }}
-      />
+    <div suppressHydrationWarning style={{ display: 'contents' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }} />
       {!breadcrumbOnly && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: safeJsonLd(article) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(article) }} />
       )}
     </div>
   );

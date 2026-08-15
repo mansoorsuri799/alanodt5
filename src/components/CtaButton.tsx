@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-export const DOWNLOAD_URL =
-  'https://pkcardrummy.com/?from_gameid=6276686&channelCode=6191689';
+import { DOWNLOAD_URL as DEFAULT_DOWNLOAD } from '@/lib/site';
+
+export const DOWNLOAD_URL = DEFAULT_DOWNLOAD;
 
 type IconKind = 'download' | 'arrow' | 'mail';
 

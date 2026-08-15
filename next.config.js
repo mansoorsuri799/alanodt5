@@ -59,9 +59,20 @@ const nextConfig = {
       },
       {
         source: '/card-rummy-logo.webp',
-        destination: '/card-rummy.webp',
+        destination: '/alano-dt-5.webp',
         permanent: true,
       },
+      { source: '/download-card-rummy', destination: '/download-alano-dt-5', permanent: true },
+      { source: '/deposit-money-in-card-rummy', destination: '/deposit-money-in-alano-dt-5', permanent: true },
+      { source: '/withdraw-money-from-card-rummy', destination: '/withdraw-money-from-alano-dt-5', permanent: true },
+      { source: '/card-rummy-for-pc', destination: '/alano-dt-5-for-pc', permanent: true },
+      { source: '/blog/create-card-rummy-account-and-login', destination: '/blog/create-alano-dt-5-account-and-login', permanent: true },
+      { source: '/blog/create-account-login', destination: '/blog/create-alano-dt-5-account-and-login', permanent: true },
+      { source: '/blog/is-card-rummy-safe-legal-pakistan', destination: '/blog/is-alano-dt-5-safe-in-pakistan', permanent: true },
+      { source: '/blog/is-card-rummy-real-or-fake', destination: '/blog/is-alano-dt-5-safe-in-pakistan', permanent: true },
+      { source: '/blog/card-rummy-bonuses-vip-guide', destination: '/blog/alano-dt-5-bonuses-and-vip-levels', permanent: true },
+      { source: '/blog/tips-to-win-big-in-card-rummy', destination: '/blog/alano-dt-5-gameplay-tips', permanent: true },
+      { source: '/blog/card-rummy-tips-10-smart-tricks', destination: '/blog/alano-dt-5-gameplay-tips', permanent: true },
     ];
   },
 
@@ -75,7 +86,7 @@ const nextConfig = {
       // Redirect old 3Patti Blue logo to Card Rummy logo
       {
         source: '/3-patti-blue-logo.webp',
-        destination: '/card-rummy.webp',
+        destination: '/alano-dt-5.webp',
       },
     ];
   },

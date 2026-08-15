@@ -38,7 +38,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/download-card-rummy',
+        href: '/download-alano-dt-5',
         label: 'Download',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -52,7 +52,7 @@ const navSections: NavSection[] = [
     title: 'GUIDES',
     items: [
       {
-        href: '/deposit-money-in-card-rummy',
+        href: '/deposit-money-in-alano-dt-5',
         label: 'Deposit Guide',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -61,7 +61,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/withdraw-money-from-card-rummy',
+        href: '/withdraw-money-from-alano-dt-5',
         label: 'Withdraw Guide',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -70,7 +70,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/card-rummy-for-pc',
+        href: '/alano-dt-5-for-pc',
         label: 'PC Version',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -186,15 +186,15 @@ export default function MobileNavigation() {
             <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
               <div className="relative w-9 h-9 flex-shrink-0 rounded-lg overflow-hidden">
                 <Image
-                  src="/card-rummy.webp"
-                  alt="Card Rummy Logo"
+                  src="/alano-dt-5.webp"
+                  alt="Alano DT 5 app icon"
                   fill
                   sizes="36px"
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="text-white text-lg font-bold tracking-tight">Card Rummy</span>
+              <span className="text-white text-lg font-bold tracking-tight">Alano DT 5</span>
             </Link>
             <button
               onClick={closeMenu}
@@ -259,11 +259,11 @@ export default function MobileNavigation() {
 
           {/* Footer CTA */}
           <div className="px-5 pt-4 pb-8 border-t border-gray-800/80 flex flex-col items-center">
-            <CtaButton onClick={closeMenu} ariaLabel="Download Card Rummy app for Android">
+            <CtaButton onClick={closeMenu} ariaLabel="Download Alano DT 5 APK for Android">
               DOWNLOAD NOW
             </CtaButton>
             <p className="text-center text-gray-500 text-xs mt-3">
-              49MB · Android 5.0+ · V1.231 (2026 Update)
+              56.82 MB · Android 5.0+ · v6.5
             </p>
           </div>
         </div>

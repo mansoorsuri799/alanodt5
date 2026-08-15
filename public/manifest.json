@@ -1,11 +1,11 @@
 {
-  "name": "Card Rummy",
-  "short_name": "Card Rummy",
-  "description": "Pakistan's premier card gaming platform offering Teen Patti, Rummy, Dragon vs Tiger and more. Earn real cash rewards!",
+  "name": "Alano DT 5",
+  "short_name": "Alano DT 5",
+  "description": "Alano DT 5 Android APK guide for Pakistan. Slots, Dragon vs Tiger, JazzCash and EasyPaisa.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#06091F",
-  "theme_color": "#06091F",
+  "background_color": "#140818",
+  "theme_color": "#140818",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -13,10 +13,10 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/card-rummy.webp",
+      "src": "/alano-dt-5.webp",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "any maskable"
     }
   ]
-} 
+}

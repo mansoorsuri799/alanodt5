@@ -7,7 +7,10 @@ const BlogCategoryDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const categories = [
-    { name: 'Account & Login', href: '/blog/create-card-rummy-account-and-login' },
+    { name: 'Account & Login', href: '/blog/create-alano-dt-5-account-and-login' },
+    { name: 'Safety', href: '/blog/is-alano-dt-5-safe-in-pakistan' },
+    { name: 'Bonuses', href: '/blog/alano-dt-5-bonuses-and-vip-levels' },
+    { name: 'Gameplay tips', href: '/blog/alano-dt-5-gameplay-tips' },
   ];
 
   return (
