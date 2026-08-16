@@ -2,82 +2,297 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import CtaButton from '@/components/CtaButton';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import { APP_SIZE, APP_VERSION, DOWNLOAD_URL, RATING_COUNT, RATING_VALUE, ROUTES, SITE_NAME, SITE_ORIGIN } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Download Alano DT 5 APK v6.5 for Android',
-  description: 'Sideload Alano DT 5 v6.5 (56.82 MB) on Android 5.0+. Unknown-sources steps, publisher URL disclosure, and JazzCash-ready install notes for Pakistan.',
-  alternates: { canonical: `${SITE_ORIGIN}${ROUTES.download}` },
+  title: 'Download Alano DT 5 Game Free APK For Android | Latest Version 2026',
+  description: 'Download Alano DT 5 APK free for Android. Play Teen Patti, Rummy, Dragon Tiger & more. Earn real cash with JazzCash & EasyPaisa. Latest version v6.5 - 56.82 MB.',
+  keywords: [
+    'Download Alano DT 5',
+    'Alano DT 5 APK download',
+    'Alano DT 5 Android',
+    'Teen Patti download',
+    'Free card game APK',
+    'Alano DT 5 latest version',
+    'Download Alano DT 5'
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://alanodt5game.com.pk/download-alano-dt-5",
+  },
   openGraph: {
-    title: 'Download Alano DT 5 APK v6.5 for Android',
-    description: 'Free Alano DT 5 APK with disclosed alanorunny.com landing and invite code 14544841.',
-    url: `${SITE_ORIGIN}${ROUTES.download}`,
-    siteName: SITE_NAME,
-    images: [{ url: `${SITE_ORIGIN}/feature/og-image.webp`, width: 512, height: 512, alt: 'Download Alano DT 5' }],
+    title: 'Download Alano DT 5 Game Free APK For Android',
+    description: 'Download Alano DT 5 APK free. Play Teen Patti, Rummy & more. Earn real cash with secure payments. 500K+ downloads!',
+    url: "https://alanodt5game.com.pk/download-alano-dt-5",
+    siteName: "Alano DT 5",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://alanodt5game.com.pk/feature/og-image.webp",
+        width: 512,
+        height: 512,
+        alt: "Download Alano DT 5 APK",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: 'Download Alano DT 5 Game Free APK For Android',
+    description: 'Download Alano DT 5 APK free. Play Teen Patti, Rummy & more. Earn real cash with secure payments. 500K+ downloads!',
+    images: ["https://alanodt5game.com.pk/feature/twitter-card.webp"],
   },
 };
 
 export default function DownloadPage() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'SoftwareApplication',
-        name: SITE_NAME,
-        operatingSystem: 'Android',
-        applicationCategory: 'GameApplication',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'PKR' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: RATING_VALUE, bestRating: '5', ratingCount: RATING_COUNT },
-        downloadUrl: DOWNLOAD_URL,
-        softwareVersion: APP_VERSION,
-        fileSize: APP_SIZE,
-      },
-      {
-        '@type': 'HowTo',
-        name: 'Download and install Alano DT 5',
-        step: [
-          { '@type': 'HowToStep', name: 'Open publisher landing', text: 'Use DOWNLOAD NOW on this page.' },
-          { '@type': 'HowToStep', name: 'Allow unknown apps', text: 'Enable the browser or Files as an install source.' },
-          { '@type': 'HowToStep', name: 'Install APK', text: 'Open the 56.82 MB file and confirm.' },
-        ],
-      },
+  // Schema.org structured data for download page
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Alano DT 5",
+    "operatingSystem": "Android 5.0+",
+    "applicationCategory": "GameApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "PKR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "600000",
+      "bestRating": "5"
+    },
+    "downloadUrl": "https://alanorunny.com/?code=14544841",
+    "softwareVersion": "v6.5",
+    "fileSize": "56.82 MB",
+    "datePublished": "2026-01-03",
+    "description": "Download Alano DT 5 APK free for Android. Play Teen Patti, Rummy, Dragon Tiger & more. Earn real cash with JazzCash & EasyPaisa.",
+    "screenshot": [
+      "https://alanodt5game.com.pk/alano-dt-5-games.webp",
+      "https://alanodt5game.com.pk/alano-dt-5-deposit-money.webp",
+      "https://alanodt5game.com.pk/alano-dt-5-withdraw-money.webp"
     ],
+    "image": "https://alanodt5game.com.pk/alano-dt-5.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "Alano DT 5",
+      "url": "https://alanodt5game.com.pk"
+    },
+    "inLanguage": ["en", "ur"],
+    "countriesSupported": "PK"
   };
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-12">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Download', href: ROUTES.download }]} />
-      <h1 className="text-4xl font-bold mb-4 text-white">Sideload Alano DT 5 v6.5 without the Play Store</h1>
-      <p className="text-gray-300 mb-6">
-        Google Play does not host this lobby. The APK is {APP_SIZE}, targets {APP_VERSION}, and needs Android 5.0+, about 2 GB RAM, and 600 MB free space.
-        The button below is an affiliate landing on alanorunny.com with code 14544841 — same destination the ranked WordPress site uses.
-      </p>
-      <div className="flex justify-center mb-4"><CtaButton>DOWNLOAD NOW</CtaButton></div>
-      <p className="text-xs text-gray-500 text-center mb-8">4.5 ★★★★☆ (18,420) · Free · Android · Game</p>
-      <Image src="/alano-dt-5.webp" alt="Alano DT 5 APK icon for Android download" width={240} height={240} className="mx-auto mb-10" />
+    <article>
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alanodt5game.com.pk" },
+              { "@type": "ListItem", "position": 2, "name": "Download Alano DT 5", "item": "https://alanodt5game.com.pk/download-alano-dt-5" }
+            ]
+          })
+        }}
+      />
+      
+      {/* Hero Section */}
+      <section className="py-8 md:py-16 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
+            <span className="text-white">Download </span>
+            <span className="text-[#FFA500]">Alano DT 5 Game</span>
+            <span className="text-white"> Free APK</span>
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+            For Android
+          </h2>
+          <p className="text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto">
+            <Link href="/" className="text-accent hover:underline font-semibold">Alano DT 5</Link> is a hub of top popular casino games like cards, poker, Rummy, Crash, Dragon Tiger, and much more. You can download this game free of cost.
+          </p>
+        </div>
 
-      <h2 className="text-2xl font-bold text-accent mb-4">Install checklist</h2>
-      <ol className="list-decimal pl-6 text-gray-300 space-y-3 mb-8">
-        <li>Tap DOWNLOAD NOW and wait until the transfer finishes. Partial files fail to parse.</li>
-        <li>If Android blocks the install, open Settings → Apps → special access → install unknown apps, then allow your browser.</li>
-        <li>Open Downloads, tap the APK, accept the requested permissions, and wait for “App installed”.</li>
-        <li>Launch once on Wi-Fi so the first asset pack can cache.</li>
-        <li>Bind a phone number before you expect welcome gold. See the <Link href={ROUTES.loginBlog} className="text-accent hover:underline">login walkthrough</Link>.</li>
-      </ol>
+        {/* Download Button - Prominent */}
+        <div className="flex justify-center my-12">
+          <CtaButton>DOWNLOAD NOW</CtaButton>
+        </div>
 
-      <h2 className="text-2xl font-bold text-accent mb-4">What to do if the APK will not open</h2>
-      <p className="text-gray-300 mb-4">
-        Delete older Alano DT builds first. Mixed versions often refuse to update. Storage under 600 MB free also fails silently.
-        Emulator users should follow <Link href={ROUTES.pc} className="text-accent hover:underline">the PC version page</Link> instead of forcing a phone-only ABI.
-      </p>
-      <h2 className="text-2xl font-bold text-accent mb-4">After install</h2>
-      <p className="text-gray-300 mb-8">
-        Add coins only through the in-app Buy Coins sheet (<Link href={ROUTES.deposit} className="text-accent hover:underline">deposit guide</Link>).
-        Do not send PKR to personal JazzCash numbers sent on WhatsApp.
-      </p>
-      <CtaButton>DOWNLOAD NOW</CtaButton>
+        <div className="flex justify-center mb-8">
+          <span className="bg-[#0A1029] text-[#4ade80] px-6 py-2 rounded-full text-sm font-semibold">
+            ⚡ Fast APK Download
+          </span>
+        </div>
+
+        {/* Logo/Image Section */}
+        <div className="flex justify-center mb-12">
+          <Image
+            src="/alano-dt-5.webp"
+            alt="Alano DT 5 - Pakistan's #1 card game app. Play Teen Patti, Rummy, Dragon vs Tiger. Download Alano DT 5 APK."
+            title="Alano DT 5 – Free Download APK for Android"
+            width={420}
+            height={420}
+            className="object-contain drop-shadow-2xl w-[260px] h-[260px] md:w-[320px] md:h-[320px]"
+            priority={true}
+            fetchPriority="high"
+            quality={90}
+            sizes="(max-width: 768px) 260px, 320px"
+          />
+        </div>
+      </section>
+
+      {/* Download Info Table */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="download-info">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFA500] text-center">Download Information</h2>
+        <div className="overflow-hidden rounded-2xl shadow-2xl border border-gray-800 max-w-3xl mx-auto">
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-800">
+              <tbody className="divide-y divide-gray-800">
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">App Name</td>
+                  <td className="py-4 px-6 text-left text-white">Alano DT 5</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Version</td>
+                  <td className="py-4 px-6 text-left text-white">v6.5</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Size</td>
+                  <td className="py-4 px-6 text-left text-white">56.82 MB</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Required OS</td>
+                  <td className="py-4 px-6 text-left text-white">Android 5.0+</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Update</td>
+                  <td className="py-4 px-6 text-left text-white">1st January 2026</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Price</td>
+                  <td className="py-4 px-6 text-left text-white">Free (0$)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Download Button After Table */}
+        <div className="flex justify-center mt-8">
+          <CtaButton>DOWNLOAD NOW</CtaButton>
+        </div>
+      </section>
+
+      {/* Download & Install Process */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="download-steps">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFA500] text-center">
+            Process to Download & Install Alano DT 5
+          </h2>
+          
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {/* Step 01 */}
+            <div className="bg-[#0A1029] rounded-lg p-6 border-l-4 border-[#FFA500]">
+              <h3 className="text-xl font-bold text-[#FFA500] mb-3">Step 01: Download APK</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Click on download button to get Alano DT 5 Game APK. Wait for automatic download completion.
+              </p>
+            </div>
+
+            {/* Step 02 */}
+            <div className="bg-[#0A1029] rounded-lg p-6 border-l-4 border-[#4ade80]">
+              <h3 className="text-xl font-bold text-[#4ade80] mb-3">Step 02: Enable Unknown Sources</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Go to device privacy settings and allow "install from unknown resources".
+              </p>
+            </div>
+
+            {/* Step 03 */}
+            <div className="bg-[#0A1029] rounded-lg p-6 border-l-4 border-[#60a5fa]">
+              <h3 className="text-xl font-bold text-[#60a5fa] mb-3">Step 03: Install APK</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Locate the downloaded file, tap on it and click on install. Let this process to be done automatically.
+              </p>
+            </div>
+
+            {/* Step 04 */}
+            <div className="bg-[#0A1029] rounded-lg p-6 border-l-4 border-[#f97316]">
+              <h3 className="text-xl font-bold text-[#f97316] mb-3">Step 04: Start Earning</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Finally, Alano DT 5 is successfully installed on your device, open it and start your journey with your first deposit in this earning app and grab opportunity to earn a lot of money.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Highlight */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFA500] text-center">
+          Why Download Alano DT 5?
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-secondary px-8 py-8 rounded-lg text-center">
+            <div className="text-4xl mb-4">💰</div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Real Money Earning</h3>
+            <p className="text-gray-300">Earn real cash by playing your favorite card games</p>
+          </div>
+          
+          <div className="bg-secondary px-8 py-8 rounded-lg text-center">
+            <div className="text-4xl mb-4">🎮</div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Multiple Games</h3>
+            <p className="text-gray-300">Teen Patti, Rummy, Dragon Tiger, and many more</p>
+          </div>
+          
+          <div className="bg-secondary px-8 py-8 rounded-lg text-center">
+            <div className="text-4xl mb-4">⚡</div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Fast Withdrawals</h3>
+            <p className="text-gray-300">Quick withdrawals through JazzCash & EasyPaisa</p>
+          </div>
+          
+          <div className="bg-secondary px-8 py-8 rounded-lg text-center">
+            <div className="text-4xl mb-4">🎁</div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Daily Bonuses</h3>
+            <p className="text-gray-300">Get daily login bonuses and rewards</p>
+          </div>
+          
+          <div className="bg-secondary px-8 py-8 rounded-lg text-center">
+            <div className="text-4xl mb-4">🔒</div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Safe & Secure</h3>
+            <p className="text-gray-300">Protected transactions and data security</p>
+          </div>
+          
+          <div className="bg-secondary px-8 py-8 rounded-lg text-center">
+            <div className="text-4xl mb-4">📱</div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Easy to Use</h3>
+            <p className="text-gray-300">Simple interface and smooth gameplay</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Back to Home */}
+      <section className="pt-6 pb-8 px-4 md:px-8 max-w-7xl mx-auto text-center">
+        <Link href="/" className="text-[#0ea5e9] hover:text-[#6366f1] font-medium transition-colors">
+          ← Back to Home
+        </Link>
+      </section>
     </article>
   );
 }
+

@@ -9,8 +9,8 @@ export const APP_VERSION = '6.5';
 export const APP_SIZE = '56.82 MB';
 export const ANDROID_MIN = 'Android 5.0+';
 export const RATING_VALUE = '4.5';
-export const RATING_COUNT = '18420';
-export const RATING_COUNT_DISPLAY = '18,420';
+export const RATING_COUNT = '500000';
+export const RATING_COUNT_DISPLAY = '500,000';
 export const PUBLISHER = 'alanorunny.com';
 export const LASTMOD = '2026-08-15';
 

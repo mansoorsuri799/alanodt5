@@ -1,336 +1,1224 @@
 import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
-import { Metadata } from "next";
-import CtaButton from "@/components/CtaButton";
-import {
-  ANDROID_MIN,
-  APP_SIZE,
-  APP_VERSION,
-  DOWNLOAD_URL,
-  LASTMOD,
-  LIVE_CHAT_URL,
-  LOGO_PATH,
-  RATING_COUNT,
-  RATING_COUNT_DISPLAY,
-  RATING_VALUE,
-  ROUTES,
-  SITE_NAME,
-  SITE_ORIGIN,
-  imageObjectLicensing,
-} from "@/lib/site";
+import Link from 'next/link';
+import Script from 'next/script';
+import { Metadata } from 'next';
+import { imageObjectLicensing } from '@/lib/schemaImageLicensing';
+import CtaButton from '@/components/CtaButton';
 
+// This additional metadata enhances the page-specific SEO
 export const metadata: Metadata = {
-  title: "Alano DT 5 APK Pakistan | Official Android Download",
-  description:
-    "Alano DT 5 v6.5 for Android in Pakistan: slots, Dragon vs Tiger, 7 Up 7 Down, JazzCash deposits, EasyPaisa cash-out, VIP levels, and a disclosed APK link.",
+  title: {
+    default: "Alano DT 5 Pakistan v6.5 Free Download Official APK",
+    template: "%s | Alano DT 5"
+  },
+  description: "Alano DT 5 2026 - Pakistan's #1 card game platform. Download Alano DT 5 APK, play Teen Patti, Rummy, Dragon vs Tiger & win real cash. Fast withdrawals via JazzCash & EasyPaisa. Join 500K+ players!",
+  keywords: [
+    "Alano DT 5",
+    "alano dt 5 game",
+    "alano dt 5 download",
+    "alano dt 5 app",
+    "alano dt 5 apk",
+    "alano dt 5 pakistan",
+    "alano dt 5 online",
+    "download alano dt 5",
+    "alano dt 5 real money",
+    "Alano DT 5",
+    "how to play alano dt 5",
+    "alano dt 5 2026",
+    "Pakistan card games",
+    "Teen Patti game",
+    "online rummy game",
+    "earn money playing cards",
+    "Android gaming app 2026",
+    "JazzCash gaming",
+    "EasyPaisa gaming",
+    "mobile card games",
+    "real money games Pakistan",
+    "card game earning app",
+    "Teen Patti online",
+    "Dragon vs Tiger",
+    "best earning app Pakistan",
+    "rummy card game",
+    "play rummy online",
+    "rummy game download"
+  ],
+  openGraph: {
+    title: 'Alano DT 5 Pakistan v6.5 Free Download Official APK',
+    description: 'Alano DT 5 2026 - Pakistan\'s #1 card game platform. Join 500K+ players. Play Teen Patti, Rummy & more. Earn real money with JazzCash & EasyPaisa. Download now!',
+    images: [
+      {
+        url: 'https://alanodt5game.com.pk/alano-dt-5.webp',
+        width: 512,
+        height: 512,
+        alt: 'Alano DT 5 - Pakistan\'s #1 card game app. Play Teen Patti, Rummy, Dragon vs Tiger.'
+      },
+      {
+        url: 'https://alanodt5game.com.pk/feature/og-image.webp',
+        width: 512,
+        height: 512,
+        alt: 'Alano DT 5 - Premier Card Gaming Platform'
+      },
+      {
+        url: 'https://alanodt5game.com.pk/feature/og-image-square.webp',
+        width: 512,
+        height: 512,
+        alt: 'Alano DT 5 - Premier Card Gaming Platform'
+      }
+    ],
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alano DT 5 Pakistan v6.5 Free Download Official APK',
+    description: 'Alano DT 5 2026 - Pakistan\'s #1 card game platform. Join 500K+ players. Play Teen Patti, Rummy & more. Earn real money with JazzCash & EasyPaisa. Download now!',
+    images: ['https://alanodt5game.com.pk/alano-dt-5.webp', 'https://alanodt5game.com.pk/feature/og-image.webp']
+  }
 };
 
-const faqs = [
-  {
-    q: "How do I download Alano DT 5 APK in Pakistan?",
-    a: "Use the Download APK page on alanodt5game.com.pk. The button opens the publisher landing at alanorunny.com with referral code 14544841. Enable unknown sources, then install the 56.82 MB file on Android 5.0 or newer.",
-  },
-  {
-    q: "Is Alano DT 5 only for Android?",
-    a: "Yes. There is no iOS build. PC play needs an Android emulator. See the PC guide on this site.",
-  },
-  {
-    q: "Which wallets work for Alano DT 5?",
-    a: "In-app coin purchases and cash-out use EasyPaisa and JazzCash. Bind a phone number and set a withdraw password before sending PKR.",
-  },
-  {
-    q: "What bonuses does Alano DT 5 actually list?",
-    a: "Typical in-app items include a small phone-bind welcome amount, first purchase extra coins, a 7-day check-in, free spin and turntable, VIP promotion prizes, and referral gifts. Amounts can change inside the live app.",
-  },
-  {
-    q: "Do I need an agent to register?",
-    a: "The in-app path is phone bind plus password. Some third-party pages mention agents; this site documents the bind flow so you are not forced into an unofficial middleman.",
-  },
-  {
-    q: "Is Alano DT 5 legal in Pakistan?",
-    a: "Real-money games sit in a grey area. This site does not give legal advice. Play only if you are 18+, can afford losses, and understand local rules.",
-  },
-];
-
 export default function Home() {
+  // Schema.org structured data for SEO
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${SITE_ORIGIN}/#website`,
-        url: `${SITE_ORIGIN}/`,
-        name: SITE_NAME,
-        inLanguage: "en",
+        "@id": "https://alanodt5game.com.pk/#website",
+        "url": "https://alanodt5game.com.pk/",
+        "name": "Alano DT 5",
+        "description": "Pakistan's premier card game platform with Teen Patti, Rummy, Dragon Tiger and more",
+        "inLanguage": "en-US"
       },
       {
         "@type": "WebPage",
-        "@id": `${SITE_ORIGIN}/#webpage`,
-        url: `${SITE_ORIGIN}/`,
-        name: "Alano DT 5 APK Pakistan | Official Android Download",
-        isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
-        primaryImageOfPage: {
-          "@type": "ImageObject",
-          url: `${SITE_ORIGIN}${LOGO_PATH}`,
-          width: 512,
-          height: 512,
-          ...imageObjectLicensing,
+        "@id": "https://alanodt5game.com.pk/#webpage",
+        "url": "https://alanodt5game.com.pk/",
+        "name": "Alano DT 5 Pakistan v6.5 Free Download Official APK",
+        "description": "Alano DT 5 2026 - Pakistan's #1 card game platform. Download Alano DT 5 APK, play Teen Patti, Rummy, Dragon vs Tiger & win real cash.",
+        "isPartOf": { "@id": "https://alanodt5game.com.pk/#website" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [
+            "#what-is-alano-dt-5",
+            "#why-alano-dt-5-popular",
+            "#how-to-start",
+            "#download",
+            "#alano-dt-5-features",
+            "#alano-dt-5-games",
+            "#alano-dt-5-bonuses",
+            "#register-login",
+            "#deposit-withdraw",
+            "#safety-security",
+            "#faq"
+          ]
         },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://alanodt5game.com.pk/alano-dt-5.webp",
+          "width": 512,
+          "height": 512,
+          "name": "Alano DT 5",
+          "description": "Alano DT 5 - Pakistan's #1 card game app. Official brand image. Play Teen Patti, Rummy, Dragon vs Tiger. Download Alano DT 5 APK for Android.",
+          ...imageObjectLicensing
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://alanodt5game.com.pk/alano-dt-5.webp#primary",
+        "url": "https://alanodt5game.com.pk/alano-dt-5.webp",
+        "contentUrl": "https://alanodt5game.com.pk/alano-dt-5.webp",
+        "name": "Alano DT 5",
+        "description": "Alano DT 5 - Pakistan's premier card game app. Official Alano DT 5 brand image with playing cards. Play Teen Patti, Rummy, Dragon vs Tiger and win real cash. Download Alano DT 5 APK.",
+        "width": 512,
+        "height": 512,
+        ...imageObjectLicensing
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://alanodt5game.com.pk/#organization",
+        "name": "Alano DT 5",
+        "url": "https://alanodt5game.com.pk/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://alanodt5game.com.pk/alano-dt-5.webp",
+          "width": 512,
+          "height": 512,
+          ...imageObjectLicensing,
+          "creditText": "Alano DT 5 logo"
+        },
+        "sameAs": [
+          "https://www.facebook.com/share/1at8tjJcje/"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@alanodt5game.com.pk",
+          "contactType": "Customer Support",
+          "areaServed": "PK"
+        }
       },
       {
         "@type": "SoftwareApplication",
-        name: SITE_NAME,
-        operatingSystem: ANDROID_MIN,
-        applicationCategory: "GameApplication",
-        image: `${SITE_ORIGIN}${LOGO_PATH}`,
-        aggregateRating: {
+        "name": "Alano DT 5",
+        "operatingSystem": "Android 5.0+",
+        "applicationCategory": "GameApplication",
+        "image": "https://alanodt5game.com.pk/alano-dt-5.webp",
+        "logo": "https://alanodt5game.com.pk/alano-dt-5.webp",
+        "aggregateRating": {
           "@type": "AggregateRating",
-          ratingValue: RATING_VALUE,
-          bestRating: "5",
-          ratingCount: RATING_COUNT,
+          "ratingValue": "4.5",
+          "ratingCount": "500000"
         },
-        offers: { "@type": "Offer", price: "0", priceCurrency: "PKR" },
-        downloadUrl: DOWNLOAD_URL,
-        softwareVersion: APP_VERSION,
-        fileSize: APP_SIZE,
-        description:
-          "Alano DT 5 is an Android casino-style APK used in Pakistan for slots, Dragon vs Tiger, and wallet cash-out via JazzCash and EasyPaisa.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "PKR"
+        },
+        "downloadUrl": "https://alanorunny.com/?code=14544841",
+        "softwareVersion": "v6.5",
+        "fileSize": "56.82 MB",
+        "description": "Alano DT 5 is Pakistan's most popular online card gaming app where players earn real money by playing Teen Patti, Rummy, Dragon vs Tiger, Andar Bahar, and more. It supports fast deposits and withdrawals via JazzCash and EasyPaisa, offers daily bonuses and VIP rewards, and has over 500,000 active players across Pakistan.",
+        "screenshot": [
+          "https://alanodt5game.com.pk/alano-dt-5.webp",
+          "https://alanodt5game.com.pk/alano-dt-5-pakistan.webp",
+          "https://alanodt5game.com.pk/alano-dt-5-games.webp",
+          "https://alanodt5game.com.pk/alano-dt-5-daily-mail-bonus.webp"
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "Alano DT 5"
+        }
       },
       {
         "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
-      {
-        "@type": "HowTo",
-        name: "Install Alano DT 5 on Android",
-        step: [
-          { "@type": "HowToStep", name: "Open the APK landing", text: "Tap DOWNLOAD NOW on this site." },
-          { "@type": "HowToStep", name: "Allow unknown sources", text: "Permit installs from this source in Android settings." },
-          { "@type": "HowToStep", name: "Install v6.5", text: "Open the downloaded APK and confirm installation." },
-        ],
-      },
-    ],
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Alano DT 5?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alano DT 5 is Pakistan's premier online card game platform where you can play Teen Patti, Rummy, Dragon vs Tiger, and many other exciting casino games. Alano DT 5 offers real cash rewards with fast withdrawals via JazzCash and EasyPaisa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to download Alano DT 5?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can download Alano DT 5 APK from the official website alanodt5game.com.pk. The app is available for Android devices and can be installed directly by downloading the APK file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to download Alano DT 5 app for Android?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To download the Alano DT 5 app for Android, visit alanodt5game.com.pk, click the download button, enable Unknown Sources in your settings, and install the APK file. The Alano DT 5 game is free to download and works on Android 5.0 or higher."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Alano DT 5 safe and legal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Alano DT 5 is safe to use with secure data protection. The platform uses encrypted transactions and protects user privacy. However, legality depends on local laws, so always check your region's regulations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to earn money on Alano DT 5?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can earn money on Alano DT 5 by playing games like Teen Patti, Rummy, and Dragon vs Tiger. The platform offers welcome bonuses, daily rewards, referral commissions, and deposit bonuses to help you start earning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to withdraw money from Alano DT 5?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can withdraw money from Alano DT 5 using JazzCash or EasyPaisa. Go to the Wallet section, click Withdrawal, choose your payment method, enter the amount and account details, then confirm. Withdrawals are processed quickly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What games are available on Alano DT 5?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alano DT 5 offers multiple games including Teen Patti, Classic Rummy, Dragon vs Tiger, Andar Bahar, Poker, and various slot games. All games are available 24/7 with real cash prizes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long do Alano DT 5 withdrawals take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alano DT 5 withdrawals through JazzCash and EasyPaisa are processed within 5-30 minutes. The platform offers fast, secure withdrawals with no hidden fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the minimum withdrawal on Alano DT 5?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The minimum withdrawal amount on Alano DT 5 depends on your payment method. Generally, you can withdraw as low as PKR 500 via JazzCash or EasyPaisa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I contact Alano DT 5 customer support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can contact Alano DT 5 customer support via 24/7 live chat within the app, email at support@alanodt5game.com.pk, or through WhatsApp. Support team responds quickly to all queries."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What bonuses does Alano DT 5 offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alano DT 5 offers welcome bonuses for new users, daily login bonuses, deposit extras, referral gifts, free spin, and VIP prizes. Amounts are shown inside the live app."
+            }
+          }
+        ]
+      }
+    ]
   };
 
   return (
     <>
-      <Script id="homepage-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
-
-      <section className="py-8 md:py-16 px-4 md:px-8 max-w-7xl mx-auto" style={{ minHeight: "400px" }}>
+      {/* Schema.org JSON-LD */}
+      <Script
+        id="homepage-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      
+      {/* Hero Section with improved spacing */}
+      <section className="py-8 md:py-16 px-4 md:px-8 max-w-7xl mx-auto" style={{ minHeight: '400px' }}>
         <div className="md:flex md:items-start md:justify-between md:space-x-12 lg:space-x-20">
           <div className="md:w-1/2 space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Alano DT 5</h1>
-              <p className="text-3xl md:text-4xl font-bold">
-                <span className="text-accent">Slots, Dragon vs Tiger, and PKR wallets</span>{" "}
-                <span className="text-white">on one Android APK</span>
-              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                <span className="text-white">Alano DT 5</span>
+              </h1>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                <span className="text-[#FFA500]">Download APK & Play</span>{' '}
+                <span className="text-white">Real Money Games in Pakistan 2026</span>
+              </h2>
             </div>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              This site is the Pakistani handbook for <Link href="/" className="text-accent hover:underline">{SITE_NAME}</Link> version {APP_VERSION}.
-              You get lobby names, JazzCash and EasyPaisa steps, and a disclosed download to alanorunny.com — not a silent tracker cloak.
-              Real-money play can lose funds; treat it as paid entertainment.
+            
+            <p className="text-lg text-gray-300 leading-relaxed" style={{ contain: 'layout style', minHeight: '120px', display: 'block' }}>
+              <Link href="/" className="text-accent hover:underline">Alano DT 5</Link> is Pakistan's premier online card game platform, where you can play more than 30+ exciting casino games. Alano DT 5 offers the best card gaming experience with attractive graphics, smooth gameplay, and real cash rewards. So download now, start playing, and win real money with fast withdrawals via JazzCash and Easy Paisa.
             </p>
-            <div className="flex items-center gap-3 text-sm text-gray-200 bg-[#0A1029] rounded-xl px-4 py-3 border border-pink-900/40">
-              <span className="text-accent font-bold">{RATING_VALUE} ★★★★☆</span>
-              <span>({RATING_COUNT_DISPLAY} ratings)</span>
-              <span>· Free · Android · Game</span>
-            </div>
+
+            {/* Download Button */}
             <div className="flex justify-center my-8">
               <CtaButton>DOWNLOAD NOW</CtaButton>
             </div>
-            <p className="text-xs text-gray-500 text-center">
-              Affiliate disclosure: the APK button uses invite code 14544841 on the publisher landing.
-            </p>
-            <div className="flex flex-row gap-4 justify-center mt-8 mb-4">
-              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
-                <div className="text-white text-2xl font-bold mb-1">{RATING_VALUE}</div>
-                <div className="text-gray-400 text-sm">Site rating</div>
+            <p className="text-center text-sm text-gray-300">4.5 ★★★★☆ (500,000) · Free · Android · Game</p>
+
+            {/* Stats Grid with improved spacing */}
+            <div className="flex flex-row gap-4 justify-center mt-8 mb-4" style={{ minHeight: '120px' }}>
+              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]" style={{ minHeight: '120px' }}>
+                <svg className="w-6 h-6 mb-3 text-[#FFA500] mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <div className="text-white text-2xl font-bold mb-1">500K+</div>
+                <div className="text-gray-400 text-sm">Downloads</div>
               </div>
-              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
-                <div className="text-white text-2xl font-bold mb-1">30+</div>
-                <div className="text-gray-400 text-sm">Lobby titles</div>
+              
+              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]" style={{ minHeight: '120px' }}>
+                <svg className="w-6 h-6 mb-3 text-[#FFA500] mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                  <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/>
+                </svg>
+                <div className="text-white text-2xl font-bold mb-1">500K+</div>
+                <div className="text-gray-400 text-sm">Ratings</div>
               </div>
-              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
-                <div className="text-white text-2xl font-bold mb-1">56.8MB</div>
-                <div className="text-gray-400 text-sm">APK size</div>
+              
+              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]" style={{ minHeight: '120px' }}>
+                <svg className="w-6 h-6 mb-3 text-[#FFA500] mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                <div className="text-white text-2xl font-bold mb-1">56.82 MB</div>
+                <div className="text-gray-400 text-sm">App Size</div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm text-center italic">*Android only · {ANDROID_MIN} · 2 GB RAM recommended</p>
+
+            {/* Android only notice */}
+            <p className="text-gray-400 text-sm text-center italic">*Available for Android devices only</p>
           </div>
-          <figure className="mt-8 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
+
+          {/* Hero Image – single component, responsive sizing via CSS */}
+          <figure
+            className="mt-8 md:mt-0 md:w-1/2 flex justify-center md:justify-end"
+            itemScope
+            itemType="https://schema.org/ImageObject"
+          >
+            <meta itemProp="name" content="Alano DT 5" />
+            <meta itemProp="description" content="Alano DT 5 - Pakistan's #1 card game app. Play Teen Patti, Rummy, Dragon vs Tiger. Download Alano DT 5 APK for Android." />
+            <meta itemProp="url" content="https://alanodt5game.com.pk/alano-dt-5.webp" />
             <Image
-              src={LOGO_PATH}
-              alt="Alano DT 5 square app icon with magenta and gold branding"
-              title="Alano DT 5 Android APK"
+              src="/alano-dt-5.webp"
+              alt="Alano DT 5 – Pakistan's #1 Card Game App"
+              title="Alano DT 5 – Download & Play Teen Patti, Rummy, Dragon vs Tiger"
               width={320}
               height={320}
               className="object-contain drop-shadow-2xl w-[260px] h-[260px] md:w-[320px] md:h-[320px]"
-              priority
+              priority={true}
               fetchPriority="high"
               quality={80}
               sizes="(max-width: 768px) 260px, 320px"
+              itemProp="image"
             />
+            <figcaption className="sr-only">Alano DT 5 – Pakistan&apos;s #1 card game app. Download the APK and play Teen Patti, Rummy, Dragon vs Tiger. Win real cash via JazzCash &amp; EasyPaisa.</figcaption>
           </figure>
         </div>
       </section>
 
+      {/* App Specifications Table with improved spacing */}
       <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="download">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-accent">Alano DT 5 APK details</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFA500]">Download Info Table</h2>
         <div className="overflow-hidden rounded-2xl shadow-2xl border border-gray-800">
-          <table className="min-w-full divide-y divide-gray-800">
-            <tbody className="divide-y divide-gray-800">
-              {[
-                ["App name", SITE_NAME],
-                ["Publisher landing", "alanorunny.com"],
-                ["Category", "Casino-style cards, slots, arcade"],
-                ["Version", APP_VERSION],
-                ["Size", APP_SIZE],
-                ["OS", ANDROID_MIN],
-                ["Wallets", "JazzCash, EasyPaisa"],
-                ["Rating on this site", `${RATING_VALUE} / 5 (${RATING_COUNT_DISPLAY})`],
-                ["Updated", LASTMOD],
-              ].map(([k, v], i) => (
-                <tr key={k} className={i % 2 ? "bg-[#140818]/50" : "bg-[#0a1029]/50"}>
-                  <td className="py-4 px-6 font-medium text-white">{k}</td>
-                  <td className="py-4 px-6 text-white">{v}</td>
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-800">
+              <tbody className="divide-y divide-gray-800">
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">App Name</td>
+                  <td className="py-4 px-6 text-left text-white">Alano DT 5</td>
                 </tr>
-              ))}
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Developer</td>
+                  <td className="py-4 px-6 text-left text-white">alanorunny.com</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Category</td>
+                  <td className="py-4 px-6 text-left text-white">Cards, Game</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Size</td>
+                  <td className="py-4 px-6 text-left text-white">56.82 MB</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Latest Version</td>
+                  <td className="py-4 px-6 text-left text-white">v6.5</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Required OS</td>
+                  <td className="py-4 px-6 text-left text-white">Android 5.0+</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Update</td>
+                  <td className="py-4 px-6 text-left text-white">15th-August-2026</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Downloads</td>
+                  <td className="py-4 px-6 text-left text-white">500k+</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Rating Count</td>
+                  <td className="py-4 px-6 text-left text-white">500000+</td>
+                </tr>
+                <tr className="bg-[#06091F]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Language</td>
+                  <td className="py-4 px-6 text-left text-white">English</td>
+                </tr>
+                <tr className="bg-[#0a1029]/50">
+                  <td className="py-4 px-6 text-left font-medium text-white">Price</td>
+                  <td className="py-4 px-6 text-left text-white">Free (0$)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section id="overview" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">Overview</h2>
+          <div className="space-y-6">
+            <p className="text-gray-300 leading-relaxed">
+              This app is divided into various sections, including card games, slots, poker, and many others, making it easy to find games that you want to play. Alano DT 5 is designed with modern graphics, smooth gameplay, and an easy interface that makes this platform more suitable for both beginners and experienced players. This app also offers you great and interesting services, allowing you to earn significant money even by investing a small amount. You can also win real cash rewards or bonuses for free. So, download the game, and start playing your favorite games to earn real cash for free.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What is Alano DT 5 Section */}
+      <section id="what-is-alano-dt-5" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">What is Alano DT 5?</h2>
+          <div className="space-y-6">
+            <p className="text-gray-300 leading-relaxed">
+              Alano DT 5 is Pakistan's most popular online card game platform that combines classic card games like Teen Patti and Rummy with modern gaming technology. When people search for "Alano DT 5", they're looking for a trusted platform to play card games and earn real money. Alano DT 5 delivers exactly that - a safe, secure, and exciting gaming experience where you can play different card games to earn money. It has become the go-to platform for card game enthusiasts in Pakistan who want to enjoy beautiful design, simple settings, classic themes, and easy gameplay options.
+            </p>
+
+            <p className="text-gray-300 leading-relaxed">
+              The Alano DT 5 platform allows you to withdraw your winnings or deposit money anytime using local payment methods like JazzCash and EasyPaisa. When you complete your deposit, you receive a deposit bonus as well. With its attractive visuals, user-friendly design, and exciting offers, Alano DT 5 stands out as one of the most enjoyable and engaging casino-style card games available in Pakistan today.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Alano DT 5 Popular Section */}
+      <section id="why-alano-dt-5-popular" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">Why Alano DT 5 Game so Popular?</h2>
+          <div className="space-y-6">
+            <p className="text-gray-300 leading-relaxed">
+              The Alano DT 5 game is very popular because it allows you to earn real money while having fun. It is easy to play because it provides you with simple rules that are very easy to understand, especially for beginners. The design of this app is very beautiful and colorful, which gives you a real casino experience on your device. Players love this app because you can withdraw and deposit money easily through Easypaisa and Jazzcash without facing any delays.
+            </p>
+
+            <p className="text-gray-300 leading-relaxed">
+              It also includes many exciting games such as Teen Patti, Dragon vs Tiger, Poker, Rummy, and Slots, so that you never feel bored. The other main reason for the popularity of Alano DT 5 is its daily bonus and rewards that help you earn coins and extra cash. It is very safe and secure and can protect your personal details or money, and work smoothly even on low-storage devices.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How to Start Section */}
+      <section id="how-to-start" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">How Can We Start with Alano DT 5?</h2>
+          <div className="space-y-4">
+            <p className="text-gray-300 leading-relaxed">To start the Alano DT 5 game, follow the given steps:</p>
+            <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+              <li>Firstly, open the official website of Alano DT 5 and <a href="https://alanorunny.com/?code=14544841" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-semibold">download the APK file</a> to your device.</li>
+              <li>Once downloaded then click on the downloaded APK file to start the installation by allowing the Unknown Sources.</li>
+              <li>Once installation is complete, click on it to open the Alano DT 5 app.</li>
+              <li>When the app opens then log in with your mobile number or just play as a guest.</li>
+              <li>When you log in, you will get free chips or welcome bonuses to start playing the game.</li>
+              <li>Choose a table or game that you want to play, and start enjoying the game.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Game Screenshots Section */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-[#06091F] rounded-xl p-8">
+          <h2 className="text-4xl font-bold mb-12 text-[#FFA500] text-center">Alano DT 5 App Screenshots</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* Main Game Interface */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-pakistan.webp"
+                  alt="Alano DT 5 Game Interface"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Game Interface</p>
+            </div>
+
+            {/* Games Collection */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-games.webp"
+                  alt="Alano DT 5 Games Collection"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Games Collection</p>
+            </div>
+
+            {/* Bonuses */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-daily-mail-bonus.webp"
+                  alt="Alano DT 5 Bonuses & Rewards"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Bonuses & Rewards</p>
+            </div>
+
+            {/* Add Money */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-deposit-money.webp"
+                  alt="Alano DT 5 Deposit Money"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Add Money</p>
+            </div>
+
+            {/* Withdraw Money */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-withdraw-money.webp"
+                  alt="Alano DT 5 Withdraw Money"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Withdraw Money</p>
+            </div>
+
+            {/* Refer and Earn */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-promote-bonus.webp"
+                  alt="Alano DT 5 Refer and Earn"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Refer & Earn</p>
+            </div>
+
+            {/* Bind Email */}
+            <div className="w-full">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/alano-dt-5-mail-bonus.webp"
+                  alt="Alano DT 5 Bind Email"
+                  width={400}
+                  height={711}
+                  className="w-full h-auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-3 font-medium">Account Security</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="alano-dt-5-features" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-accent">Top Features of Alano DT 5</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">1: Real Money Earning</h3>
+            <p className="text-gray-300">Alano DT 5 allows you to earn real cash rewards just by playing the game that you want to play or like. Whether you enjoy teen patti, poker, or rummy, every match provides you with a chance to win money. This app directly transfers your earnings through the local and easy payment methods safely.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">2: Easy Withdraw & Deposit</h3>
+            <p className="text-gray-300">With Alano DT 5, you can manage your money in a super simple or fast way. With just a few steps, you can withdraw or deposit money anytime using local payment methods, such as JazzCash or EasyPaisa. It also ensures you have secure and quick transactions without any delays.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">3: Attractive Interface</h3>
+            <p className="text-gray-300">This app is designed with a bright, colorful, and modern interface that can attract its users. The background music, smooth animations, and clear layout create an amazing or pleasant experience. Each section of this app is designed very well, so that you can find your favourite game easily.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">4: Popular Games</h3>
+            <p className="text-gray-300">3 Alano DT 5 provides you with a wide variety of famous games in one app so that you can enjoy dragon vs tiger, poker, slots, and many other exciting options. Each game of this app has simple rules that make it perfect for both beginners and experienced players.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">5: Daily Bonus</h3>
+            <p className="text-gray-300">This app rewards you every day with free login bonuses or chips. You can earn extra coins just by opening the app regularly. It also provides special rewards on weekly or festival occasions. These bonuses help you to keep playing even if you do not want to deposit money.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">6: Referral Earning</h3>
+            <p className="text-gray-300">Alano DT 5 offers you a referral program where you can earn money without playing games. You just need to share your referral link with your friends and invite them to join. When they start playing games, you receive a commission automatically.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">7: Fast Performance</h3>
+            <p className="text-gray-300">This app runs smoothly on almost every Android device, even on older models. It does not hang, crash, or use too much storage space. The lightweight design of this app helps it to run faster and load to provide a smooth gameplay.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">8: Safe & Secure Platform</h3>
+            <p className="text-gray-300">In 3Patti Alano DT 5, your privacy and money are completely safe because it uses a secure payment method and data protection system that keeps everything private. This app is trusted by thousands of players for its reliability.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">9: Free to Play</h3>
+            <p className="text-gray-300">Alano DT 5 is free to download and does not ask for any registration fees. Through this feature, you can start playing games quickly with free chips that are given by the app. This feature is a perfect choice, especially for beginners.</p>
+          </div>
+          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
+            <h3 className="text-xl font-semibold mb-3 text-accent">10: 24/7 Support</h3>
+            <p className="text-gray-300">This app also provides you with fast customer support, which helps you anytime. Whether you face a deposit issue or a technical error, this support team responds quickly. You can contact the team directly through the app for quick help.</p>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Available Games Section */}
+      <section id="alano-dt-5-games" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Best Games to Play on Alano DT 5</h2>
+          
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-4 text-[#FFA500]">1: Multiplayer Games</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Tiger Dragon <span className="text-[#f97316]">(Hot)</span></p>
+          </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">7 UP Down <span className="text-[#f97316]">(Hot)</span></p>
+          </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Zoo Roulette <span className="text-[#f97316]">(Hot)</span></p>
+          </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Crash</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Car Roulette</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Andar Bahar</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Teenpatti 20-20</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Best of Five</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-4 text-[#FFA500]">2: Skill-Based Games</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Domino <span className="text-[#f97316]">(Hot)</span></p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Rummy <span className="text-[#f97316]">(Hot)</span></p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Teen Patti</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Fishing Rush</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">10 Cards</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Poker</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Ludo</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Black Jack</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-[#FFA500]">3: Slots</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Mines <span className="text-[#f97316]">(Hot)</span></p>
+            </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Fruit Line</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">777 Bingo</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Rattling GEMS</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Video Poker 1, 2</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">Wild Energy</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">WoW Slot</p>
+              </div>
+              <div className="bg-[#0A1029] p-4 rounded-lg">
+                <p className="text-white font-medium">God of Fortune</p>
+          </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bonuses Section */}
+      <section id="alano-dt-5-bonuses" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Benefits for New Players by Joining Alano DT 5</h2>
+        
+        {/* New Player Welcome Bonus */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">1: New Player Welcome Bonus</h3>
+          <p className="text-gray-300 mb-4">3Patti offers a 100% recharge bonus for all new, fresh users on their first deposit in this game.</p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-800 rounded-lg overflow-hidden">
+              <thead className="bg-[#0a1029]">
+                <tr>
+                  <th className="py-3 px-6 text-left text-white font-semibold">Deposit Amount (PKR)</th>
+                  <th className="py-3 px-6 text-left text-white font-semibold">Bonus Amount (PKR)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-800">
+                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">100</td><td className="py-3 px-6 text-gray-300">100</td></tr>
+                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">1000</td><td className="py-3 px-6 text-gray-300">1000</td></tr>
+                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">5000</td><td className="py-3 px-6 text-gray-300">5000</td></tr>
+                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">10,000</td><td className="py-3 px-6 text-gray-300">10,000</td></tr>
+                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">20,000</td><td className="py-3 px-6 text-gray-300">20,000</td></tr>
+                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">100,000</td><td className="py-3 px-6 text-gray-300">100,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">2: Daily Check-in Bonus</h3>
+          <p className="text-gray-300 mb-4">Log in to Alano DT 5 every day and claim the check-in gift. Keep the streak for seven days to unlock the larger last-day reward. Missing a day resets the streak.</p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">3: Referral Program</h3>
+          <p className="text-gray-300 mb-4">Share your invite code with friends. Valid referrals can add extra gold after they bind a phone. Check the live invite screen for current amounts because they can change in the app.</p>
+        </div>
+        </div>
+      </section>
+
+      {/* Download Instructions */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Download Alano DT 5 APK Latest Version For Android?</h2>
+          <p className="text-gray-300 mb-4">To download the latest version of Alano DT 5 APK for Android devices, follow the given steps:</p>
+          <div className="mb-8">
+          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+            <li>First, you open the browser on your Android device and click on the search bar.</li>
+            <li>In the search bar, type the latest version of Alano DT 5 and visit the trusted website.</li>
+            <li>On the trusted website, click on the Download button to start downloading.</li>
+            <li>Now wait a few seconds to complete the downloading process.</li>
+            <li>Once complete, that file will be saved in the Download Folder of the device.</li>
+          </ol>
+        </div>
+        
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Installation Guide for Alano DT 5 APK</h2>
+        <p className="text-gray-300 mb-4">After downloading to installing the Alano DT 5 APK, follow the given steps:</p>
+        <div className="mb-8">
+          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+            <li>To start installation, your device grants permission to install unknown sources.</li>
+            <li>Open the Settings &lt; Security and enable the Install Unknown Apps.</li>
+            <li>After this, open the File Manager and go to the Download Folder.</li>
+            <li>Click on the download APK file, and the installation process will start.</li>
+            <li>Wait until the installation completes successfully on your device.</li>
+            <li>Once complete then the app icon will show on your device.</li>
+            <li>Click on it to launch the app and start playing the games that you want.</li>
+          </ol>
+        </div>
+
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">System Requirements</h2>
+        <div className="overflow-x-auto mb-8">
+          <table className="min-w-full divide-y divide-gray-800 rounded-lg overflow-hidden">
+            <thead className="bg-[#0a1029]">
+              <tr>
+                <th className="py-3 px-6 text-left text-white font-semibold">System</th>
+                <th className="py-3 px-6 text-left text-white font-semibold">Minimum</th>
+                <th className="py-3 px-6 text-left text-white font-semibold">Recommended</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-800">
+              <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">Operating System</td><td className="py-3 px-6 text-gray-300">Android 4.1</td><td className="py-3 px-6 text-gray-300">Android 8.0 or above</td></tr>
+              <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">RAM</td><td className="py-3 px-6 text-gray-300">2GB or more</td><td className="py-3 px-6 text-gray-300">4GB or more</td></tr>
+              <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">Storage Space</td><td className="py-3 px-6 text-gray-300">At least 500 MB free</td><td className="py-3 px-6 text-gray-300">1GB free space</td></tr>
+              <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">Processor</td><td className="py-3 px-6 text-gray-300">Quad-core 1.5 GHz</td><td className="py-3 px-6 text-gray-300">Octa-core 2.0 GHz</td></tr>
+              <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">Internet</td><td className="py-3 px-6 text-gray-300">Stable 3G or WiFi</td><td className="py-3 px-6 text-gray-300">Fast & stable 4G or WiFi</td></tr>
             </tbody>
           </table>
         </div>
-      </section>
 
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="what-is">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">What Pakistani players actually open in Alano DT 5</h2>
-        <p className="text-gray-300 mb-4 leading-relaxed">
-          Alano DT 5 is a sideloaded Android lobby, not a Play Store listing. After install you see themed slots (Fortune Gems, Sweet Bonanza, Classic Fruit 777),
-          short-round card tables (Dragon vs Tiger Fight, 7 Up 7 Down, Red and Black), and arcade bets (Mines, Crash-style Rocket, Bingo Pig).
-          That mix is why searchers compare it with other “DT” brands rather than classic rummy-only apps.
-        </p>
-        <p className="text-gray-300 mb-4 leading-relaxed">
-          Coins are bought in PKR bundles from about Rs 100 up to high-value packs. Extra coin percentages on those packs are shown in the buy screen, not as a hidden “guaranteed income” promise.
-          For a full install walkthrough, use the <Link href={ROUTES.download} className="text-accent hover:underline">Alano DT 5 download guide</Link>.
-        </p>
-        <Image
-          src="/alano-dt-5-games.webp"
-          alt="Alano DT 5 lobby showing slot and card game tiles"
-          width={1200}
-          height={628}
-          className="rounded-2xl w-full h-auto mt-6"
-          sizes="(max-width: 1280px) 100vw, 1200px"
-        />
-      </section>
-
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="features">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Lobby tools that matter more than slogans</h2>
-        <div className="space-y-6 text-gray-300 leading-relaxed">
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">Phone bind before bonuses</h3>
-            <p>Welcome gold is tied to binding a Pakistani number. Until that OTP step is done, spins and cash-out stay locked. We document the taps in the <Link href={ROUTES.loginBlog} className="text-accent hover:underline">account and login article</Link>.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">Withdraw password</h3>
-            <p>A second password sits on cash-out. That is the main in-app control against a stolen session, not a marketing “bank-grade” claim.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">History and VIP ladder</h3>
-            <p>Bet records, recharge logs, and a long VIP track (promoted as 23 levels on the ranked WordPress page) sit in the profile area. Higher levels add weekly and monthly gifts if you keep depositing — that is optional spend, not a salary.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">Live help</h3>
-            <p>In-app chat and the public desk at <a href={LIVE_CHAT_URL} className="text-accent hover:underline" rel="noopener noreferrer">ssrchat</a> are the practical support paths. Email us at support@alanodt5game.com.pk for this website, not for publisher wallet disputes.</p>
+        <div className="flex justify-center">
+          <CtaButton>DOWNLOAD NOW</CtaButton>
           </div>
         </div>
       </section>
 
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="bonuses">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Bonus numbers this review will not inflate</h2>
-        <p className="text-gray-300 mb-4">Figures below match the currently ranked alanodt5.app page so you can verify them in the live APK. They can change without notice.</p>
-        <ul className="list-disc pl-6 text-gray-300 space-y-2">
-          <li>Phone-bind welcome: about Rs 10</li>
-          <li>First coin purchase extra: about Rs 77 on qualifying packs</li>
-          <li>Seven-day check-in with a larger last-day gift if the streak holds</li>
-          <li>Free spin wheel with cash-style prizes shown in the UI</li>
-          <li>Turntable lottery points from the top-left control</li>
-          <li>Referral ladders (example: Rs 205 / Rs 400 / Rs 6,200 at 1 / 10 / 50 valid invites)</li>
-          <li>Daily first-recharge rebate around 10%</li>
-          <li>Telegram join gift around Rs 10; social share tasks around Rs 50</li>
-        </ul>
-        <p className="text-gray-300 mt-4">
-          Full VIP table discussion lives on the <Link href={ROUTES.bonusBlog} className="text-accent hover:underline">bonuses and VIP levels post</Link>.
-        </p>
-        <Image
-          src="/alano-dt-5-daily-mail-bonus.webp"
-          alt="Alano DT 5 mailbox bonus screen with daily claim button"
-          width={1200}
-          height={628}
-          className="rounded-2xl w-full h-auto mt-6"
-          sizes="(max-width: 1280px) 100vw, 1200px"
-        />
-      </section>
+      {/* Account Creation */}
+      <section id="register-login" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Register & Login on Alano DT 5?</h2>
+          
+          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">1: Register Method</h3>
+          <p className="text-gray-300 mb-4">To register the account on Alano DT 5, follow the given steps:</p>
+          <div className="mb-8">
+          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+            <li>Firstly, open the Alano DT 5 app on your device.</li>
+            <li>On the homescreen, click on the Register or Sign Up option.</li>
+            <li>Now, enter your valid mobile number or email address.</li>
+            <li>Set a strong password that can never be accessed easily.</li>
+            <li>Enter the OTP that you can receive through phone or email for verification.</li>
+            <li>Once verification is complete then your account will be created successfully.</li>
+          </ol>
+          </div>
 
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="install">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Sideload Alano DT 5 without Play Store</h2>
-        <ol className="list-decimal pl-6 text-gray-300 space-y-3">
-          <li>Tap DOWNLOAD NOW. You leave this domain for alanorunny.com with code 14544841.</li>
-          <li>Wait for the APK (~{APP_SIZE}).</li>
-          <li>Android Settings → allow install from this browser or files app.</li>
-          <li>Open the file, accept permissions, finish setup.</li>
-          <li>Keep 600 MB free storage and a stable mobile network.</li>
-        </ol>
-        <p className="text-gray-300 mt-4">Need a bigger screen? Follow <Link href={ROUTES.pc} className="text-accent hover:underline">Alano DT 5 for PC</Link>.</p>
-      </section>
-
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="money">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">PKR in and PKR out, in two dedicated guides</h2>
-        <p className="text-gray-300 mb-4">
-          Deposits start at Buy Coins with EasyPaisa or JazzCash. Cash-out needs a bound wallet, withdraw password, and enough balance after bets.
-          We keep those intents on their own URLs so this homepage is not a 4,000-word skyscraper.
-        </p>
-        <p className="text-gray-300">
-          Read <Link href={ROUTES.deposit} className="text-accent hover:underline">how to deposit in Alano DT 5</Link>
-          {" "}and{" "}
-          <Link href={ROUTES.withdraw} className="text-accent hover:underline">how to withdraw to EasyPaisa</Link>.
-        </p>
-        <div className="grid md:grid-cols-2 gap-6 mt-6">
-          <Image src="/alano-dt-5-deposit-money.webp" alt="Alano DT 5 buy coins screen with EasyPaisa and JazzCash" width={800} height={500} className="rounded-2xl w-full h-auto" />
-          <Image src="/alano-dt-5-withdraw-money.webp" alt="Alano DT 5 withdraw form with wallet number field" width={800} height={500} className="rounded-2xl w-full h-auto" />
+          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">2: Login Method</h3>
+          <p className="text-gray-300 mb-4">After registration, the next step is to log account for Follow the given steps:</p>
+          <div className="space-y-4">
+          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+            <li>Open the Alano DT 5 app on your device.</li>
+            <li>Click on the Login button on the homescreen.</li>
+            <li>Enter your registered mobile number, email, or password.</li>
+            <li>Make sure that your entered details are correct.</li>
+            <li>Once confirmed, tap on the Sign in or Login option.</li>
+            <li>If you forget your password, then use Forgot Password to reset it.</li>
+            <li>Once logging is complete, you can start playing games.</li>
+          </ol>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="safety">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Risks we will not hide</h2>
-        <p className="text-gray-300 mb-4">
-          Sideloaded APKs can be swapped. Bookmark this site, check the publisher URL, and never type wallet PINs into random WhatsApp “agents”.
-          Sessions can be addictive; set a daily PKR cap. Details: <Link href={ROUTES.safetyBlog} className="text-accent hover:underline">is Alano DT 5 safe in Pakistan</Link>
-          {" "}and <Link href={ROUTES.tipsBlog} className="text-accent hover:underline">gameplay tips</Link>.
-        </p>
+      {/* Payment Methods Section */}
+      <section id="deposit-withdraw" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Ways to Deposit & Withdraw Money in Alano DT 5</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            <div className="bg-[#0A1029] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">1: Jazzcash</h3>
+              <p className="text-gray-300">Jazzcash is one of the most trusted and secure mobile banking services that allows you to deposit money quickly into your gaming account and start playing games quickly. It's a fast and safe transaction system that allows you to withdraw your winnings directly into your account wallet. The best part of this method is that you can wait a long time because the transactions are completed within seconds.</p>
+            </div>
+            <div className="bg-[#0A1029] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">2: Easypaisa</h3>
+              <p className="text-gray-300">Easypaisa is another secure and most commonly used payment method that is similar to the JazzCash method. It allows you to deposit or withdraw money without any difficulty. Through this method, you can add funds to your game account and transfer winnings to your Easypaisa wallet in just a few steps. The process of this method is very safe, reliable, and suitable for all types of users.</p>
+            </div>
+            <div className="bg-[#0A1029] p-6 rounded-lg md:col-span-2 lg:col-span-1">
+              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">3: Bank Card</h3>
+              <p className="text-gray-300">Bank Card is a convenient withdrawal option that lets you send your winnings directly to your bank account. Simply choose your desired bank, enter your account number, user name, and email, then submit your withdrawal request. With Bank Card, you can withdraw up to PKR 20,000 maximum per transaction, making it ideal for larger payouts. This method provides a secure way to receive your earnings straight to your bank account.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="faq">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Alano DT 5 questions from search</h2>
+      {/* Deposit Instructions */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-secondary rounded-xl p-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Deposit Money?</h2>
+            <p className="text-gray-300 mb-4">To deposit money in Alano DT 5, follow the given steps:</p>
+                <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+              <li>First, open the Alano DT 5 app on your device and log in.</li>
+              <li>Now, click on the Wallet option that is available on the homescreen.</li>
+              <li>In this wallet section, click on the Deposit option.</li>
+              <li>Choose a payment method that you want to use.</li>
+              <li>Enter the amount that you want to deposit.</li>
+              <li>Click on the confirm option and wait to complete it.</li>
+              <li>Once complete, the balance will show in your game wallet.</li>
+                </ol>
+              </div>
+          <div className="bg-secondary rounded-xl p-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Withdraw Money?</h2>
+            <p className="text-gray-300 mb-4">To withdraw money in Alano DT 5, follow the given steps:</p>
+                <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+              <li>Open the Alano DT 5 app and log in to your account.</li>
+              <li>Click on the Wallet option that is available on the main screen.</li>
+              <li>In the wallet section, click on the Withdrawal option.</li>
+              <li>Choose your payment method, like JazzCash, EasyPaisa, or Bank Card.</li>
+              <li>Now enter the amount that you want to withdraw.</li>
+              <li>Enter some required details, like the account number.</li>
+              <li>Double-check all entered details and click on Confirm.</li>
+              <li>Wait a few seconds to complete the withdrawal process.</li>
+              <li>Once complete, that money will be shown in your selected payment method.</li>
+                </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Tips and Tricks */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Tips & Tricks to Earn Maximum on Alano DT 5 Game</h2>
+          <div className="space-y-4">
+          <ul className="list-disc pl-5 space-y-3 text-gray-300">
+            <li><strong>Start with Small Bets:</strong> Always start a game with a small investment because it will help you to understand the game rules and overcome the risk of losing money. When you become confident, then increase your bet.</li>
+            <li><strong>Use Bonuses Wisely:</strong> Alano DT 5 offers you daily login bonuses, referral bonuses, or deposit rewards. It helps you to play more games without spending your one money or earning extra money.</li>
+            <li><strong>Play Popular Games:</strong> Focus on high-earning games such as Dragon vs Tiger or Teen Patti Classic that provide you with higher winning chances, and also attract players with better opportunities to earn.</li>
+            <li><strong>Invite Friends:</strong> Use the referral link system to invite friends every time your friends join, and then you can earn commission. The more friends you invite, the higher you can become.</li>
+            <li><strong>Stay Active Daily:</strong> Regularly log in to the app to collect the daily rewards or spin bonuses. Always stay active because it will increase your bonus balance or improve your chances of winning big.</li>
+            <li><strong>Withdraw on Time:</strong> When you earn a good amount then do not delay withdrawal. Always transfer your winnings as soon as possible through Jazcash or EasyPaisa to keep your money safe.</li>
+            <li><strong>Learn from Practice Mode:</strong> Before playing games with real money, try the free or demo mode as practice. This helps you to understand the gameplay easily and develop the winning strategies without any risk.</li>
+            <li><strong>Keep the Emotions in Control:</strong> Never play games with frustration or greed. Always stay calm or make smart decisions during the game because it helps you to avoid unnecessary losses.</li>
+            <li><strong>With Expert Players:</strong> Observe how other players make the moves. Through this, you can learn new techniques or strategies and timing from them to improve your skills.</li>
+            <li><strong>Avoid Fake Apps:</strong> Always download the original Alano DT 5 app through official or trusted sources because fake links or websites can steal your personal data or money.</li>
+          </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* What's New Section */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">What's New in the Latest Version of the Alano DT 5?</h2>
+          <div className="space-y-4">
+            <ol className="list-decimal pl-5 space-y-3 text-gray-300">
+              <li>In the latest version, the game looks better with improved graphics and smooth animations.</li>
+              <li>Provide fast performance so that the app opens quickly and runs smoothly without lag.</li>
+              <li>Its menu and layout are simple, which makes it very easy, especially for new users.</li>
+              <li>In the latest versions, more games are added, such as Dragon vs Tiger, Rummy, and others.</li>
+              <li>The withdrawal or deposit options work faster and smoothly in the latest version.</li>
+              <li>In the latest version, better security measures can be used that can protect your account and money.</li>
+              <li>New bonuses and referral rewards provide you with more chances to earn money.</li>
+              <li>Old Errors or app issues are removed to offer a smooth gaming experience.</li>
+              <li>The background music or game sounds improve the app and provide more fun.</li>
+              <li>The new VIP system gives you extra prizes and benefits that help you stay active.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Pros and Cons */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Pros & Cons of using Alano DT 5</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Pros</h3>
+            <div className="bg-[#0A1029] px-8 py-8 rounded-lg">
+              <ul className="list-disc pl-5 space-y-3 text-gray-300">
+                <li>Very simple and fun to play</li>
+                <li>Earn money with a small investment</li>
+                <li>Jazzcash and Easypaisa make payment easy</li>
+                <li>Many different games for enjoyment</li>
+                <li>Fast withdrawal of your money</li>
+                <li>Very easy to use and quick to start</li>
+                <li>Daily rewards and bonuses</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Cons</h3>
+            <div className="bg-[#0A1029] px-8 py-8 rounded-lg">
+              <ul className="list-disc pl-5 space-y-3 text-gray-300">
+                <li>Risk of losing money</li>
+                <li>Sometimes withdrawals take time</li>
+                <li>Gameplay can be addictive</li>
+                <li>Run slow on weak phones</li>
+                <li>No legal Support</li>
+                <li>No Financial Freedom</li>
+                <li>Gameplay can be complicated</li>
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Safety Section */}
+      <section id="safety-security" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">About the Safety & Security of the Alano DT 5</h2>
+          <div className="space-y-4">
+            <p className="text-gray-300 leading-relaxed">
+              Alano DT 5 is an online gaming platform that provides you with a safe and secure environment. It uses basic security features such as data encryption or SSL certificates that can protect your information. This app also supports local payment options such as JazzCash or Easy Paisa, which can make the transactions safer and secure. However, this app is not officially available on the Google Play Store and may come with some risks, such as malware or scams. So, it is important to make sure that you can download it from official, safe, and secure sources. Always avoid sharing your sensitive personal information or banking details.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Support Section */}
+      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How Can We Contact the Alano DT 5?</h2>
+          <p className="text-gray-300 mb-6">To contact the customer support team of Alano DT 5, you can use the given methods:</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#0A1029] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Live Chat</h3>
+              <p className="text-gray-300">Alano DT 5 provides you with a live chat feature inside the app so that you can directly talk to the support team if you face any problems. Whether you face any issue like playing or using the app, this team responds to you quickly and helps you solve your issues in real time. Live chat is the fastest way to get support without leaving the app.</p>
+            </div>
+            <div className="bg-[#0A1029] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">WhatsApp</h3>
+              <p className="text-gray-300">You can also contact the support team through WhatsApp. You can simply use the number that is provided in the app to send your problem. This support team replies to you with instructions or solutions that make it easy to fix any problem. This WhatsApp support is very convenient because this is a simple and easy way to get help.</p>
+            </div>
+            <div className="bg-[#0A1029] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">FAQs</h3>
+              <p className="text-gray-300">This app also dedicates a FAQs section where common questions are given with their answers. You can check this section before contacting the customer support team to save time. These FAQs mostly cover all topics such as registration, deposit, withdrawals, bonuses, and game rules. So, this is quick and easy to find the solution without waiting long.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">Frequently Asked Questions</h2>
         <div className="space-y-4">
-          {faqs.map((f) => (
-            <details key={f.q} className="bg-[#0A1029] rounded-xl p-5 border border-gray-800">
-              <summary className="font-semibold text-white cursor-pointer">{f.q}</summary>
-              <p className="text-gray-300 mt-3">{f.a}</p>
-            </details>
-          ))}
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              What is Alano DT 5 and how does it work?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              Alano DT 5 is Pakistan's premier online card game platform where you can play Teen Patti, Rummy, Dragon vs Tiger, and many other exciting casino games. You can play Alano DT 5 without depositing money by using free bonuses like the Welcome Bonus and Referral Commission. Alano DT 5 offers real cash rewards with fast withdrawals via JazzCash and EasyPaisa.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              How to download Alano DT 5 APK?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              To download Alano DT 5 APK, visit alanodt5game.com.pk and click the download button. The Alano DT 5 APK file will be saved to your device. Enable "Install from Unknown Sources" in your Android settings, then open the downloaded file to install Alano DT 5.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              What makes Alano DT 5 different from other card games?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              Alano DT 5 stands out with its simple design, fast transactions via JazzCash and EasyPaisa, exciting games like Teen Patti and Rummy, daily bonuses, and secure platform. Alano DT 5 offers the best card gaming experience in Pakistan with real cash rewards.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              Is Alano DT 5 safe and legal to use?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              Yes, Alano DT 5 is safe to use with secure data encryption and privacy protection. Alano DT 5 ensures your personal information and transactions are protected. However, the legality of online gaming depends on your local laws, so always check your region's regulations before playing Alano DT 5.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              Can users lose money while playing?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              Yes, this app is involved with real money, so you might lose some amount if you do not play the games carefully. So, always play wisely and set a limit while playing.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              Is it possible to change the language of Alano DT 5?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              Yes, it is possible because this app supports multiple languages, so you can change the language from the settings menu easily.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              How do referral rewards work?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              When you share your referral link with others, or when someone joins this app through your link, you can receive a commission.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              How to bind bank?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              To bind your bank for withdrawals, go to Wallet &gt; Withdrawal &gt; Bank Card. Select your desired bank from the list, then enter your account number, user name, and email. Once submitted, your bank account will be linked and ready for withdrawals.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              What is the maximum withdrawal at a time?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              For Bank Card withdrawals, the maximum amount you can withdraw at a time is PKR 20,000. For JazzCash and EasyPaisa, limits may vary—check the withdrawal section in the app for current limits.
+            </div>
+          </details>
+
+          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
+            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
+              Is Alano DT 5 available on iPhone (iOS)?
+              <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
+              This app is mainly available for Android devices, but you can also check the official website or store for updates about iOS availability.
+            </div>
+          </details>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent">Install when you understand the product</h2>
-        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-          Alano DT 5 is a Pakistani-facing Android lobby with local wallets and a dense bonus sheet. Download only if you accept losses and sideload risk.
-        </p>
-        <CtaButton>DOWNLOAD NOW</CtaButton>
+      {/* Conclusion */}
+      <section className="pt-12 pb-4 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="bg-secondary rounded-xl p-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Final Thoughts</h2>
+          <div className="space-y-4">
+          <p className="text-gray-300">
+            Alano DT 5 is one of the most popular online card games in the world. It not only provides you with fun or entertainment but also provides you with a great chance to earn money if you play games wisely. This app provides you with a simple and user-friendly interface that can make it easy, especially for beginners, to play games. The deposit or withdrawal system through JazzCash or EasyPaisa is very convenient, which makes this platform very easy to use. If you play responsibly, make plans with smart strategies, and focus on your skill rather than luck, Alano DT 5 can become a more exciting or rewarding gaming experience.
+          </p>
+          </div>
+        </div>
       </section>
     </>
   );

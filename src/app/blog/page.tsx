@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const posts = [
   { href: ROUTES.safetyBlog, title: 'Is Alano DT 5 safe to sideload in Pakistan?', excerpt: 'APK risk, wallet passwords, legal grey area, and how this site differs from thin APK blogs.', time: '9 min' },
   { href: ROUTES.loginBlog, title: 'Bind a phone and log in to Alano DT 5', excerpt: 'OTP bind, withdraw password, and why unofficial agents are optional.', time: '7 min' },
-  { href: ROUTES.bonusBlog, title: 'Alano DT 5 bonuses and the 23-level VIP track', excerpt: 'Welcome gold, check-in, referrals, rebate — with amounts you can verify in-app.', time: '8 min' },
+  { href: ROUTES.bonusBlog, title: 'Alano DT 5 bonuses and the 23-level VIP track', excerpt: 'Welcome gold, check-in, referrals, and VIP prizes — with amounts you can verify in-app.', time: '8 min' },
   { href: ROUTES.tipsBlog, title: 'Alano DT 5 gameplay habits that cut avoidable losses', excerpt: 'Stake size, RTP-style selection, and when to walk away.', time: '7 min' },
 ];
 
